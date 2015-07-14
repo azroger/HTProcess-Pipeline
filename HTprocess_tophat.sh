@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# Created by Roger Barthelson to run in the iPlant DE
+# A step of the HTProcess pipeline
+# Runs Tophat2 on all trimmed fastq files in the HTProcess_Read directory 
 
 export PATH=$PATH:/usr/local2/tophat-2.0.13.Linux_x86_64/:/usr/local2/samtools-0.1.18/:/usr/local2/bowtie2-2.2.4/
 

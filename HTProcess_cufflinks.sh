@@ -1,5 +1,11 @@
 #! /bin/bash
 
+
+# Created by Roger Barthelson to run in the iPlant DE
+# A step of the HTProcess pipeline
+# Runs cufflinks on all BAM files in input HTProcess_BAM directories 
+
+
 export PATH=$PATH:/usr/local2/cufflinks-2.2.0.Linux_x86_64:/usr/local2/samtools-0.1.18/:/usr/local2/bowtie2-2.1.0/
 #export PATH=$PATH:/usr/local2/tophat-2.0.11.Linux_x86_64:/usr/local2/samtools-0.1.19:/usr/local2/bowtie2-2.1.0
 

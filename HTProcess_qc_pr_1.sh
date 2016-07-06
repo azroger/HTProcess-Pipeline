@@ -1,12 +1,7 @@
 #! /bin/bash
 
-# Created by Roger Barthelson to run in the iPlant DE
-# First main step of HTProcess pipeline
-# Takes folder inputs of forward, reverse, and single reads 
-# Runs FastQC, creates combined summary file in html that includes embedded images
-
-export PATH=/usr/local2/rogerab/HTProcess:${PATH}
-export PATH=/usr/local2/FastQC:${PATH}
+#export PATH=/usr/local2/rogerab/HTProcess:${PATH}
+#export PATH=/usr/local2/FastQC:${PATH}
 
 while getopts a:b:c:d:e:f:g:u:r: option
 do
@@ -23,7 +18,7 @@ do
                 r) DirS=$OPTARG;;
       esac
 done
-export PATH=/home/rogerab/bin2:${PATH}
+#export PATH=/home/rogerab/bin2:${PATH}
         PN1=`ls $Dir1 | wc -w`
         PN2=`ls $Dir2 | wc -w`
         SN=`ls $DirS | wc -w`

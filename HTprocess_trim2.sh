@@ -8,9 +8,9 @@
 # Runs FastQC on trimmed reads
 # Creates combined summary file in html that includes embedded images
 
-export PATH=/usr/local2/rogerab/HTProcess:${PATH}
-export PATH=/usr/local2/FastQC:${PATH}
-export PATH=/usr/local2/Trimmomatic-0.32:${PATH}
+#export PATH=/usr/local2/rogerab/HTProcess:${PATH}
+#export PATH=/usr/local2/FastQC:${PATH}
+#export PATH=/usr/local2/Trimmomatic-0.32:${PATH}
 
 while getopts a:b:c:d:e:f:g:h:k:l:m:n:o:p:q:r:s:t:u:v:x:y:z:i:j option
 do
@@ -158,7 +158,7 @@ echo "read1 equals $read1" >> HTProcess_Reads/HTProcess.log
 echo "read2 equals $read2" >> HTProcess_Reads/HTProcess.log
 if [[ $program == 1 ]];
 then
-java -jar /usr/local2/rogerab/HTProcess/trimmomatic-0.32.jar PE -threads 4 "$Fred" -trimlog trimlogFilep1.txt HTProcess_Reads1/"$read1" HTProcess_Reads1/"$read2" HTProcess_Reads/"TrmPr1_""$read1" singletemp/"TrmS1_""$read1" HTProcess_Reads/"TrmPr2_""$read2" singletemp/"TrmS2_""$read2" $command1
+java -jar trimmomatic-0.32.jar PE -threads 4 "$Fred" -trimlog trimlogFilep1.txt HTProcess_Reads1/"$read1" HTProcess_Reads1/"$read2" HTProcess_Reads/"TrmPr1_""$read1" singletemp/"TrmS1_""$read1" HTProcess_Reads/"TrmPr2_""$read2" singletemp/"TrmS2_""$read2" $command1
 echo "!TRIMMED_Pr TrmPr1_$read1,TrmPr2_$read2" >> HTProcess_Reads/manifest_file.txt
 cat singletemp/"TrmS2_$read2" >> singletemp/"TrmS1_$read1"
 mv singletemp/"TrmS1_$read1" singletemp/"TrmSos_$read1"
@@ -167,7 +167,7 @@ echo "!TRIMMED_OS TrmSos_$read1" >> orphans
 fi
 if [[ $program == 2 ]];
 then
-java -jar /usr/local2/Trimmomatic-0.32/trimmomatic-0.32.jar PE -threads 4 "$Fred" -trimlog trimlogFilep1.txt HTProcess_Reads1/"$read1" HTProcess_Reads1/"$read2" HTProcess_Reads/"TrmPr1_""$read1" singletemp/"TrmS1_""$read1" HTProcess_Reads/"TrmPr2_""$read2" singletemp/"TrmS2_""$read2" $command2
+java -jar trimmomatic-0.32.jar PE -threads 4 "$Fred" -trimlog trimlogFilep1.txt HTProcess_Reads1/"$read1" HTProcess_Reads1/"$read2" HTProcess_Reads/"TrmPr1_""$read1" singletemp/"TrmS1_""$read1" HTProcess_Reads/"TrmPr2_""$read2" singletemp/"TrmS2_""$read2" $command2
 echo "!TRIMMED_Pr TrmPr1_$read1,TrmPr2_$read2" >> HTProcess_Reads/manifest_file.txt
 cat singletemp/"TrmS2_$read2" >> singletemp/"TrmS1_$read1"
 mv singletemp/"TrmS1_$read1" singletemp/"TrmSos_$read1"
@@ -192,12 +192,12 @@ readS=`echo "${arrayz[$j]}" | sed 's/,.*//'`
 echo "readS equals $readS" >> HTProcess_Reads/HTProcess.log
 if [[ $program == 1 ]];
 then
-java -jar /usr/local2/rogerab/HTProcess/trimmomatic-0.32.jar SE -threads 4 "$Fred" -trimlog trimlogFileS.txt HTProcess_Reads1/"$readS" singletemp/"TrmSos_""$readS" $command1
+java -jar trimmomatic-0.32.jar SE -threads 4 "$Fred" -trimlog trimlogFileS.txt HTProcess_Reads1/"$readS" singletemp/"TrmSos_""$readS" $command1
 echo "!TRIMMED_OS TrmSos_""$readS" >> orphans
 fi
 if [[ $program == 2 ]];
 then
-java -jar /usr/local2/rogerab/HTProcess/trimmomatic-0.32.jar SE -threads 4 "$Fred" -trimlog trimlogFileS.txt HTProcess_Reads1/"$readS" singletemp/"TrmSos_""$readS" $command2
+java -jar trimmomatic-0.32.jar SE -threads 4 "$Fred" -trimlog trimlogFileS.txt HTProcess_Reads1/"$readS" singletemp/"TrmSos_""$readS" $command2
 echo "!TRIMMED_OS TrmSos_""$readS" >> orphans
 fi
 fi

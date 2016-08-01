@@ -96,7 +96,7 @@ done
 fi
 cp allreads.txt HTProcess_Reads/
 cd HTProcess_Reads
-/usr/local2/bin/python2.7 /usr/local2/rogerab/kmergenie-1.6476/kmergenie allreads.txt -t 3 $command1  > log.txt
+ kmergenie allreads.txt -t 3 $command1  > log.txt
 mkdir ../intermediate_files
 mv histograms* ../intermediate_files/
 cd ..

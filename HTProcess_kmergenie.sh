@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-export PATH=/usr/local2/bin/:/usr/local2/rogerab/kmergenie-1.6476/:$PATH
+
 
 while getopts a:b:c:d:e:f:g:h:k:l:m:n:o:p:q:r:s:t:u:v:x:y:z:i:j option
 do

@@ -1,7 +1,7 @@
-#! /bin/bash
+#!/bin/bash
 
 
-#export PATH=/usr/local2/bin/:/usr/local2/rogerab/kmergenie-1.6476/:$PATH
+export PATH=/usr/local2/bin/:/usr/local2/rogerab/kmergenie-1.6476/:$PATH
 
 while getopts a:b:c:d:e:f:g:h:k:l:m:n:o:p:q:r:s:t:u:v:x:y:z:i:j option
 do
@@ -96,7 +96,7 @@ done
 fi
 cp allreads.txt HTProcess_Reads/
 cd HTProcess_Reads
- kmergenie allreads.txt -t 3 $command1  > log.txt
+kmergenie allreads.txt -t 3 $command1  > log.txt
 mkdir ../intermediate_files
 mv histograms* ../intermediate_files/
 cd ..

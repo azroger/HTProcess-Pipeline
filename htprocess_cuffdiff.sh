@@ -7,7 +7,7 @@
 
 
 
-export PATH=$PATH:/usr/local2/cufflinks-2.2.0.Linux_x86_64:/usr/local2/samtools-0.1.18/:/usr/local2/bowtie2-2.1.0/
+#export PATH=$PATH:/usr/local2/cufflinks-2.2.0.Linux_x86_64:/usr/local2/samtools-0.1.18/:/usr/local2/bowtie2-2.1.0/
 #export PATH=$PATH:/usr/local2/tophat-2.0.11.Linux_x86_64:/usr/local2/samtools-0.1.19:/usr/local2/bowtie2-2.1.0
 
 while getopts a:b:c:d:e:f:g:h:k:l:m:n:o:p:q:r:s:t:u:v:x:y:z option
@@ -125,12 +125,12 @@ cp HTProcess_BAM*/*.bam ./
 echo "....................................." >> HTProcess.log
 echo " Files present in directory. " >> HTProcess.log
 ls >> HTProcess.log
-/usr/local2/cufflinks-2.2.0.Linux_x86_64/cuffdiff -p 4 -o CUFFDIFFOUTPUT -L $labelz $trnscrpt_asmbly $inPuts
+cuffdiff -p 4 -o CUFFDIFFOUTPUT -L $labelz $trnscrpt_asmbly $inPuts
 echo "cuffdiff -p 4 -o CUFFDIFFOUTPUT -L $labelz ${trnscrpt_asmbly} $inPuts" >> HTProcess.log
 rm *.bam
 
 echo "Sorting output data and graphing graphs with CummeRbund" >> HTProcess.log
-perl /usr/local2/rogerab/HTProcess/perlcleanup.pl
+perl perlcleanup.pl
 
 rm CleanupOut
 rm cuffdiff_config.txt

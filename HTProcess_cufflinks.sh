@@ -6,7 +6,7 @@
 # Runs cufflinks on all BAM files in input HTProcess_BAM directories 
 
 
-export PATH=$PATH:/usr/local2/cufflinks-2.2.0.Linux_x86_64:/usr/local2/samtools-0.1.18/:/usr/local2/bowtie2-2.1.0/
+#export PATH=$PATH:/usr/local2/cufflinks-2.2.0.Linux_x86_64:/usr/local2/samtools-0.1.18/:/usr/local2/bowtie2-2.1.0/
 #export PATH=$PATH:/usr/local2/tophat-2.0.11.Linux_x86_64:/usr/local2/samtools-0.1.19:/usr/local2/bowtie2-2.1.0
 
 while getopts a:b:c:d:e:f:g:h:k:l:m:n:o:p:q:r:s:t:u:v:x:y:z option

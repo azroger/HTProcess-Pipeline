@@ -8,7 +8,7 @@ use warnings;
 # requires also an R script, basic_plots.R
 
 open( AFIL,  ">> CleanupOut" )  or die "Cannot open output file\n";
-system "/usr/local2/rogerab/HTProcess/cuffdiff_get_goodstuff_test.pl 0.05";
+system "cuffdiff_get_goodstuff_test.pl 0.05";
 
 open( IFIL,  "config.txt" );
 

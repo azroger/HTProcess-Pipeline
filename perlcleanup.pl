@@ -9,6 +9,7 @@ use warnings;
 
 open( AFIL,  ">> CleanupOut" )  or die "Cannot open output file\n";
 
+system "cuffdiff_get_goodstuff_test.pl 0.05";
 
 open( IFIL,  "config.txt" );
 

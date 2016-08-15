@@ -130,7 +130,7 @@ echo "cuffdiff -p 4 -o CUFFDIFFOUTPUT -L $labelz ${trnscrpt_asmbly} $inPuts" >> 
 rm *.bam
 
 echo "Sorting output data and graphing graphs with CummeRbund" >> HTProcess.log
-perl perlcleanup.pl
+perlcleanup.pl
 
 rm CleanupOut
 rm cuffdiff_config.txt

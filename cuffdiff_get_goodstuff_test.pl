@@ -5,7 +5,7 @@
 
 use strict;
 
-use constant ANNOTATIONS  => '/usr/local2/ensembl_plant_gene_desc/';
+
 
 chdir "CUFFDIFFOUTPUT";
 system "mkdir ../sorted_data";
@@ -13,16 +13,6 @@ system "mkdir ../sorted_data";
 my (%desc);
 
 my $fdr = shift || 0.05;
-
-my $species = ANNOTATIONS;
-open DEF, "zcat $species/*.txt.gz |" or die $!;
-while (<DEF>) {
-    chomp;
-    my ($g,$l,$d) = split "\t";
-    $g or next;
-    $desc{$g}  = $d || '.';
-}
-close DEF;
 
 
 screen_file("gene_exp.diff",1,1,0,"genes.sorted_by_fold.txt");
